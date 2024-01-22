@@ -20,12 +20,12 @@ c = undefined;
 
 let frutas = ["manzana"]; // En este ejemplo es importante visualizar como esta compuesto en memoria el arreglo
 // variables    valores     Dirección en memoria      Objeto
-// frutas      <#001>            #001              ['frutas']
+// frutas      <#001>            #001              ['manzana']
 //Al crear objetos o arreglos creamos REFERENCIAS en memoria y no valores
 
 frutas.push("pera");
 // variables    valores     Dirección en memoria      Objeto
-// frutas      <#001>            #001           ['frutas', 'pera']
+// frutas      <#001>            #001           ['manzana', 'pera']
 
 let panes = ["🥐"];
 let copiaDePanes = panes;
