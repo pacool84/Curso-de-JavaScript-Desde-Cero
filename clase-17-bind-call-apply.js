@@ -26,3 +26,17 @@ dogGreeting.apply(newHouse, necessaryValues);
 const bindMethod = dogGreeting.bind(newHouse, owner, address);
 bindMethod();
 console.log(bindMethod); //El resultado en consola es [Function: bound dogGreeting]
+
+//QUIZ
+
+const caricatura = {
+  nombre: "Vaca y Pollito",
+};
+
+function recuerdo(personaje) {
+  console.log(`${this.nombre} era mi caricatura favorita.
+  Me encantaba ver las aventuras de ${personaje}`);
+}
+
+recuerdo.call(caricatura, "Vaca");
+recuerdo.bind(caricatura, "Pollito"); //El resultado es function, por que bind se requiere ejecutar en una nueva funcion
