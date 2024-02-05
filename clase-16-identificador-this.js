@@ -7,16 +7,29 @@ const house = {
   },
 };
 house.dogGreeting();
+
+//.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+
 function dogGreeting() {
   console.log(`Hi, I'm ${this.dogName}`); //Este this ya no apunta al objeto que hace alusion
 }
 
-//Otro ejemplo enlace explcito - Explicit Binding
-const newHouse = { dogName: "Coconut" };
-dogGreeting.call(newHouse);
+const newHouse = {
+  dogName: "Coconut",
+  dogAge: 3,
+}; //Otro ejemplo enlace explcito - Explicit Binding
+
+dogGreeting.call(newHouse); //Aqui hacemos la vinculacion con el metodo call al nuevo objeto
+
+//.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+
+const newObject = {
+  dogName: "Naginie",
+};
+
 function newDogGreeting(owner, address) {
   console.log(`Hi, I'm ${this.dogName} and I live with ${owner} on ${address}`);
 }
 const owner = "Lucy";
 const address = "Avenue 123";
-newDogGreeting.call(newHouse, owner, address); //El metodo call nos permite vincular el objeto con la funcion, this hace alusion al nvo objeto newHouse
+newDogGreeting.call(newObject, owner, address); //El metodo call nos permite vincular la funcion con un ibjeto, this hace alusion al nvo objeto newObject
