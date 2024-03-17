@@ -22,25 +22,32 @@ const deck = [
   "♦️",
 ];
 
-//Se esta utilizando el algoritmo de "FISHER-YATES"
-function shuffleDesk() {
+// Utilizamos el algoritmo de "Fisher-Yates" para barajar el mazo
+function shuffleDeck() {
   for (let index = deck.length - 1; index > 0; index--) {
     const j = Math.floor(Math.random() * (index + 1));
     [deck[index], deck[j]] = [deck[j], deck[index]];
   }
 }
 
-function dealCards(numCard) {
-  const dealCards = deck.splice(0, numCard);
-  return dealCards;
+// Función para repartir cartas
+function dealCards(numCards) {
+  const dealtCards = deck.splice(0, numCards);
+  return dealtCards;
 }
 
-shuffleDesk();
+// Barajamos el mazo antes de repartir
+shuffleDeck();
 
-const player1Hand = dealCards(3);
-const player2Hand = dealCards(3);
-const player3Hand = dealCards(3);
+// Constante para el número de cartas a repartir
+const NUM_CARDS_TO_DEAL = 3;
 
+// Repartimos cartas a los jugadores
+const player1Hand = dealCards(NUM_CARDS_TO_DEAL);
+const player2Hand = dealCards(NUM_CARDS_TO_DEAL);
+const player3Hand = dealCards(NUM_CARDS_TO_DEAL);
+
+// Mostramos las manos de los jugadores
 console.log("Jugador 1: ", player1Hand);
 console.log("Jugador 2: ", player2Hand);
 console.log("Jugador 3: ", player3Hand);
