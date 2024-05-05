@@ -1,51 +1,31 @@
-// Existen Datos Primitivos y Complejos
-//En javascript existen 10 tipos de Datos
+// JavaScript: Tipos de Datos Primitivos y Complejos
 
-//Primitivos
-/* 
-String
-Number
-Boolean
-null
-undefined
-symbol
-bignit .- Alojar numeros MUY grandes
-*/
+// En JavaScript, existen 10 tipos de datos:
+// Primitivos: String, Number, Boolean, null, undefined, Symbol, BigInt
+// Complejos: Object, Array, Function
 
-//Complejos
-/* 
-object 
-array
-function
-*/
+// Primitivos: Son inmutables y se pasan por valor
+// Complejos: Son mutables y se pasan por referencia
+// Inmutables: Los valores originales no pueden cambiar
+// Mutables: Los valores originales pueden cambiar
 
-//Primitivos .- Son inmutables y Se pasan por valor
-
-//Complejos .- Son mutables y Se pasan por referencia
-
-//Inmutables .- Los valores y datos originales NO pueden cambiar
-
-//Mutables .- Los valores y datos originales SI pueden cambiar
-
-//Ejemplo de tipo de dato primitivo - Inmutable
-
-let numero = 23;
-tiempo = numero + 10;
+// Ejemplo de tipo de dato primitivo - Inmutable
+const numero = 23; // Usamos const porque el valor no cambiará
+let tiempo = numero + 10; // La variable es reasignada, pero el valor original no cambia
 console.log("Numero: ", numero);
 console.log("Tiempo: ", tiempo);
 
 let esVerdadero = false;
-esVerdadero = true;
-console.log("esVerdadero: ", esVerdadero); // javascript asigna un nuevo valor PERO el valor original no se cambia
+esVerdadero = true; // JavaScript asigna un nuevo valor, pero el valor original no cambia
+console.log("esVerdadero: ", esVerdadero);
 
-//Ejemplo de tipo de dato complejo - Mutable
-
-let usuario = { nombre: "Sebas", edad: 8 };
-usuario.edad = 10; //Aqui si el valor original MUTA, se sobrescribe y cambia el valor o dato original
+// Ejemplo de tipo de dato complejo - Mutable
+let usuario = { nombre: "Sebas", edad: 8 }; // Usamos let porque el objeto puede cambiar
+usuario.edad = 10; // Aquí el valor original muta, se sobrescribe y cambia el dato original
 console.log("usuario: ", usuario);
 
 let frutas = ["🍎", "🍐"];
-frutas[0] = "🍌";
+frutas[0] = "🍌"; // Los arrays son mutables, podemos cambiar elementos individuales
 console.log("frutas: ", frutas);
 
 function cambiarNombre(objeto) {
@@ -53,5 +33,5 @@ function cambiarNombre(objeto) {
 }
 
 let persona = { nombre: "Paco" };
-cambiarNombre(persona);
-console.log("persona: ", persona);
+cambiarNombre(persona); // Aquí estamos pasando el objeto por referencia, por lo que la función puede mutar el objeto
+console.log("persona: ", persona);  
